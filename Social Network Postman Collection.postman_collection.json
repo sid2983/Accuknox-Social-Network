@@ -1,0 +1,321 @@
+{
+	"info": {
+		"_postman_id": "8108e2c2-5b56-4e16-9dc6-6280c51799de",
+		"name": "Social Network Postman Collection",
+		"description": "I**mportant Note** : **You need to send the Bearer (access token) for every authenticated requests.**\n\nFormat for header :\n\n`{ \"Authorization\": \"Bearer\"}`",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26249030",
+		"_collection_link": "https://www.postman.com/interstellar-shuttle-455943/workspace/accuknox-assignment/collection/26249030-8108e2c2-5b56-4e16-9dc6-6280c51799de?action=share&source=collection_link&creator=26249030"
+	},
+	"item": [
+		{
+			"name": "Sign up",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"ks1234\",\r\n    \"email\": \"ks1234@gmail.com\",\r\n    \"password\": \"ks@#123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/signup/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"signup",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"sid24000576@gmail.com\",\r\n    \"password\": \"sid2983@#\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/login/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"login",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search Users",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzIwMDY4NzMyLCJpYXQiOjE3MjAwNjgxMzIsImp0aSI6ImYxNDkwNmQxMjQyMjRmN2NhYmU1MjhjOGIzMmIzODkwIiwidXNlcl9pZCI6MTl9.T6b0eGpHvh26M8adhaHanbxjajCCWeDwpaBi0gRw0aY",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/search/?search_keyword=k",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"search",
+						""
+					],
+					"query": [
+						{
+							"key": "search_keyword",
+							"value": "k"
+						}
+					]
+				},
+				"description": "You need the access token as a Bearer after login to get search the users with query keyword.\n\nWrite the Access token as mentioned below: \"Bearer\""
+			},
+			"response": []
+		},
+		{
+			"name": "Send Friend Request",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzIwMDY4NzMyLCJpYXQiOjE3MjAwNjgxMzIsImp0aSI6ImYxNDkwNmQxMjQyMjRmN2NhYmU1MjhjOGIzMmIzODkwIiwidXNlcl9pZCI6MTl9.T6b0eGpHvh26M8adhaHanbxjajCCWeDwpaBi0gRw0aY",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"receiver_username\":\"ks123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/send_friend_request/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"send_friend_request",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Pending Friend Requests",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzIwMDY5MzUxLCJpYXQiOjE3MjAwNjg3NTEsImp0aSI6ImQ0N2NhNTE5NTM0ZDQ1NzM5NzgwNWMzNTFkOWI0NDFiIiwidXNlcl9pZCI6MTl9.HAF-1tE5LYseCjLCy3xeQ8ZztaJijFudBLMflW4e1j8",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/list_pending_friend_requests/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"list_pending_friend_requests",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Accept Friend Request",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzIwMDY5MzUxLCJpYXQiOjE3MjAwNjg3NTEsImp0aSI6ImQ0N2NhNTE5NTM0ZDQ1NzM5NzgwNWMzNTFkOWI0NDFiIiwidXNlcl9pZCI6MTl9.HAF-1tE5LYseCjLCy3xeQ8ZztaJijFudBLMflW4e1j8",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/accept_friend_request/23/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"accept_friend_request",
+						"23",
+						""
+					]
+				},
+				"description": "Here the 23 in query params is the id/pk of the user who sent the request"
+			},
+			"response": []
+		},
+		{
+			"name": "Reject Friend Request",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzIwMDY5OTY4LCJpYXQiOjE3MjAwNjkzNjgsImp0aSI6ImVhMTE2ZGM4N2QwYzQ5MWZiZjNmOTY1YzZkNmE3NzE1IiwidXNlcl9pZCI6MTl9.EG8lITHcBkXENbP-LJtluvkVH1M8F0c5zAW9V-v8Nnk",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/reject_friend_request/24/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"reject_friend_request",
+						"24",
+						""
+					]
+				},
+				"description": "Here 24 in query params is the id/pk of the user who sent the request"
+			},
+			"response": []
+		},
+		{
+			"name": "List Friends",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzIwMDY5OTY4LCJpYXQiOjE3MjAwNjkzNjgsImp0aSI6ImVhMTE2ZGM4N2QwYzQ5MWZiZjNmOTY1YzZkNmE3NzE1IiwidXNlcl9pZCI6MTl9.EG8lITHcBkXENbP-LJtluvkVH1M8F0c5zAW9V-v8Nnk",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/list_friends/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"list_friends",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Logout",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzIwMDcyMDI3LCJpYXQiOjE3MjAwNzE0MjcsImp0aSI6ImRkNjQwOWQ3NzE0MzRmNzVhOGQ1NGNkNzcyMTQzODZmIiwidXNlcl9pZCI6MTl9.hoEPH5cx43N47QvGMaaCJJrj5yYyfzq2mu5MgJJR2ZM",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"refresh\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTcyMDE1NzgyNywiaWF0IjoxNzIwMDcxNDI3LCJqdGkiOiI3MTQxMWEzOGQ1ZWU0MDQwODYxNmM4YWU3NDY1NjEzNyIsInVzZXJfaWQiOjE5fQ.j0wLFP3LXTtMheA9EapPuiEzhtIP0diZm3f2jqpQH5o\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/logout/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"logout",
+						""
+					]
+				},
+				"description": "After adding `Authorization` header , you need to send `refresh` token in the json format in the body in order to log out. Then that refresh token will be blacklisted and can never be used for login again."
+			},
+			"response": []
+		}
+	]
+}
